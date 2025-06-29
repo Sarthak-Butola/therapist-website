@@ -26,7 +26,7 @@ export default function Hero() {
           </p>
 
           <a
-            href="/contact"
+            href="#contact"
             className="mt-8 w-64 h-12 sm:w-72 sm:h-14 bg-[#b9cfcf] text-white text-sm sm:text-base md:text-lg font-semibold rounded-[36px] flex items-center justify-center tracking-wide hover:bg-[#a8bcbc] transition"
           >
             SCHEDULE A CONSULTATION
