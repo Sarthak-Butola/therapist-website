@@ -1,7 +1,22 @@
-export default function Home() {
+  // import Hero from '../components/Hero';
+
+  // export default function HomePage() {
+  //   return (
+  //     <main>
+  //       <Hero />
+  //     </main>
+  //   );
+  // }
+
+
+  import Hero from '../components/Hero';
+import About from '../components/About';
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-green-200">
-      <h1 className="text-4xl font-bold text-blue-600">Tailwind is working!</h1>
+    <main>
+      <Hero />
+      <About />
     </main>
-  )
+  );
 }
