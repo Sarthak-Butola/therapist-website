@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 export default function Services() {
@@ -24,11 +25,38 @@ export default function Services() {
     },
   ];
 
+  const itemRefs = useRef([]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      itemRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
     <section className="w-full bg-[#f9f6f2] px-6 md:px-12 py-20">
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-serif font-bold text-gray-900">
-          Area of Focus
+          Areas of Focus
         </h2>
       </div>
 
@@ -38,7 +66,10 @@ export default function Services() {
             key={index}
             className="rounded-lg flex flex-col items-center text-center px-4"
           >
-            <div className="w-[22rem] h-[22rem] mb-8">
+            <div
+              ref={(el) => (itemRefs.current[index * 2] = el)}
+              className="w-[22rem] h-[22rem] mb-8 fadeInOnScroll"
+            >
               <Image
                 src={service.image}
                 alt={service.title}
@@ -47,12 +78,17 @@ export default function Services() {
                 className="rounded-full object-cover w-full h-full border border-gray-300 shadow"
               />
             </div>
-            <h3 className="text-2xl font-semibold font-serif mb-4 text-gray-900">
-              {service.title}
-            </h3>
-            <p className="text-gray-700 text-base leading-relaxed">
-              {service.description}
-            </p>
+            <div
+              ref={(el) => (itemRefs.current[index * 2 + 1] = el)}
+              className="fadeInOnScroll"
+            >
+              <h3 className="text-2xl font-semibold font-serif mb-4 text-gray-900">
+                {service.title}
+              </h3>
+              <p className="text-gray-700 text-base leading-relaxed">
+                {service.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>

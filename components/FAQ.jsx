@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 
@@ -22,9 +23,33 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const el = contentRef.current;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            el.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (el) observer.observe(el);
+    return () => el && observer.unobserve(el);
+  }, []);
+
   return (
     <section className="w-full bg-[#f9f6f2] py-20 px-6 md:px-12">
-      <div className="max-w-3xl mx-auto">
+      {/* 🔽 Apply fade only to this inner div */}
+      <div
+        ref={contentRef}
+        className="fadeInOnScroll max-w-3xl mx-auto"
+      >
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-[#37517e] font-serif">
           Frequently Asked Questions
         </h2>
@@ -33,8 +58,8 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <Disclosure key={index}>
               {({ open }) => (
-                <div className="border-b border-gray-300 pb-4 transition-all duration-500">
-                  <Disclosure.Button className="flex justify-between w-full text-left items-center font-serif text-[1.35rem] font-medium text-[#37517e] transition-all">
+                <div className="border-b border-gray-300 pb-4 transition-all duration-500 ">
+                  <Disclosure.Button className="flex justify-between w-full text-left items-center font-serif text-[1.35rem] font-medium text-[#37517e] transition-all hover:cursor-pointer">
                     <span>{faq.question}</span>
                     <ChevronUpIcon
                       className={`${
