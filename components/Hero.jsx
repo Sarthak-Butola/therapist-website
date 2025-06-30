@@ -11,8 +11,12 @@ export default function Hero() {
           muted
           loop
           playsInline
+          preload="none"   
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
         />
+        {/* dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-40 z-10" />
 
         {/* ✨ Foreground Text */}
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 sm:px-8 text-white">
