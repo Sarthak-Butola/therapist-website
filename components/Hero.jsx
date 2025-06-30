@@ -2,8 +2,8 @@
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-screen bg-white flex items-center justify-center">
-      <div className="relative w-full max-w-7xl h-[90vh] mx-4 sm:mx-8 overflow-hidden">
+    <section className="w-full min-h-screen bg-[#f5f2e9] flex items-center justify-center">
+      <div className="relative w-full h-screen mx-4 sm:mx-8 lg:mx-16 overflow-hidden bg-[#f5f2e9] mt-10">
         {/* 🎥 Background Video */}
         <video
           src="/hero.mp4"
@@ -11,15 +11,15 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="none"   
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover"
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        {/* dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-40 z-10" />
 
-        {/* ✨ Foreground Text */}
-        <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 sm:px-8 text-white">
+        {/* 🌑 Dark Overlay for contrast */}
+        <div className="absolute inset-0 bg-black opacity-50 z-10" />
+
+        {/* ✨ Foreground Content */}
+        <div className="relative z-20 flex flex-col justify-center items-center h-full text-center px-4 text-white">
           <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold leading-snug drop-shadow-md">
             Psychological Care for <br />
             Change, Insight, and Well‑Being
@@ -31,7 +31,7 @@ export default function Hero() {
 
           <a
             href="#contact"
-            className="mt-8 w-64 h-12 sm:w-72 sm:h-14 bg-[#b9cfcf] text-white text-sm sm:text-base md:text-lg font-semibold rounded-[36px] flex items-center justify-center tracking-wide hover:bg-[#a8bcbc] transition"
+            className="mt-8 bg-[#b9cfcf] text-white text-sm sm:text-base md:text-lg font-semibold rounded-full px-8 py-3 sm:px-10 sm:py-3.5 tracking-wide hover:bg-[#a8bcbc] transition"
           >
             SCHEDULE A CONSULTATION
           </a>
