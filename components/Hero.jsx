@@ -16,7 +16,7 @@ export default function Hero() {
         />
 
         {/* 🌑 Dark Overlay for contrast */}
-        <div className="absolute inset-0 bg-black opacity-50 z-10" />
+        <div className="absolute inset-0 bg-black opacity-40 z-10" />
 
         {/* ✨ Foreground Content */}
         <div className="relative z-20 flex flex-col justify-center items-center h-full text-center px-4 text-white">
