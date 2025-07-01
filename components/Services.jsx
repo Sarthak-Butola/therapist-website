@@ -55,12 +55,13 @@ export default function Services() {
   return (
     <section className="w-full bg-[#f9f6f2] px-6 md:px-12 py-20">
       <div className="max-w-6xl mx-auto text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-serif font-bold text-gray-900">
-          Areas of Focus
-        </h2>
+      <h2 className="text-3xl md:text-5xl font-serif font-light text-gray-900">
+      Areas of Focus
+      </h2>
+
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
         {services.map((service, index) => (
           <div
             key={index}
@@ -68,13 +69,19 @@ export default function Services() {
           >
             <div
               ref={(el) => (itemRefs.current[index * 2] = el)}
-              className="w-[22rem] h-[22rem] mb-8 fadeInOnScroll"
+              className="
+                fadeInOnScroll 
+                w-[18rem] h-[18rem] 
+                sm:w-[20rem] sm:h-[20rem] 
+                md:w-[14rem] md:h-[14rem] 
+                lg:w-[20rem] lg:h-[20rem] 
+                mb-8"
             >
               <Image
                 src={service.image}
                 alt={service.title}
-                width={352}
-                height={352}
+                width={320}
+                height={320}
                 className="rounded-full object-cover w-full h-full border border-gray-300 shadow"
               />
             </div>
@@ -82,7 +89,7 @@ export default function Services() {
               ref={(el) => (itemRefs.current[index * 2 + 1] = el)}
               className="fadeInOnScroll"
             >
-              <h3 className="text-2xl font-semibold font-serif mb-4 text-gray-900">
+              <h3 className="text-2xl font-light font-serif mb-4 text-gray-900">
                 {service.title}
               </h3>
               <p className="text-gray-700 text-base leading-relaxed">

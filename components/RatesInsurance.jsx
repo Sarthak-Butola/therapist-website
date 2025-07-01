@@ -36,19 +36,19 @@ export default function RatesAndInsurance() {
             Rates and Insurance
           </h2>
 
-          <p className="fadeInOnScroll text-lg sm:text-xl font-light font-serif leading-relaxed tracking-normal">
+          <p className="fadeInOnScroll text-lg sm:text-xl font-light font-Lora leading-relaxed tracking-normal">
             Session Fee – $200
           </p>
 
-          <p className="fadeInOnScroll text-lg sm:text-xl font-light font-serif leading-relaxed tracking-normal">
+          <p className="fadeInOnScroll text-lg sm:text-xl font-light font-Playfair Display leading-relaxed tracking-normal">
             Psychodiagnostic Evaluation – $225
           </p>
 
-          <p className="fadeInOnScroll text-base sm:text-lg font-serif font-light leading-relaxed tracking-normal">
+          <p className="fadeInOnScroll text-base sm:text-lg font-Lora font-light leading-relaxed tracking-normal">
             I accept both private pay and insurance. I am in-network with BCBS and Aetna.
           </p>
 
-          <p className="fadeInOnScroll text-base sm:text-lg font-serif font-light leading-relaxed tracking-normal">
+          <p className="fadeInOnScroll text-base sm:text-lg font-Lora font-light leading-relaxed tracking-normal">
             For out-of-network plans, I’ve partnered with Mentaya using{' '}
             <a
               href="https://app.mentaya.com/p/provider-match?provider=65afdee4bb1f2a0001432658"
@@ -70,7 +70,7 @@ export default function RatesAndInsurance() {
           className="fadeInOnScroll max-w-5xl mx-auto text-center"
         >
           <p
-            className="text-xl sm:text-[1.625rem] font-serif font-semibold mx-1"
+            className="text-xl sm:text-[1.625rem] font-serif font-medium mx-1"
             style={{ color: '#2c2c2c', lineHeight: '1.8' }}
           >
             Unable to accept new clients at this time.
