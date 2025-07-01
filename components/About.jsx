@@ -73,7 +73,7 @@ export default function About() {
 
       {/* Divider */}
       <div className="mt-12 flex justify-center">
-        <div className="w-3/4 border-b border-black" />
+        <div className="w-14/15 border-b border-black" />
       </div>
     </section>
   );

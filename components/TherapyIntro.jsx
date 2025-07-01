@@ -33,7 +33,7 @@ export default function TherapyIntro() {
   }, []);
 
   return (
-    <section className="bg-[#f5f2e9] text-center px-6 py-20 border-b border-gray-400">
+    <section className="bg-[#f5f2e9] text-center px-6 py-20 ">
       <div className="max-w-5xl mx-auto space-y-6" style={{ fontFamily: 'Georgia, serif' }}>
         <h2
           ref={headingRef}
@@ -56,6 +56,9 @@ export default function TherapyIntro() {
           Whatever the source of your stress, you don’t have to face it alone. Therapy offers you the time and space
           to work toward wellness and peace.
         </p>
+      </div>
+       <div className="mt-12 flex justify-center">
+        <div className="w-14/15 border-b border-black" />
       </div>
     </section>
   );
