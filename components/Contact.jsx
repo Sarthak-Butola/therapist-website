@@ -77,10 +77,23 @@ export default function Contact() {
     const newErrors = validate();
     setErrors(newErrors);
 
+    // if (Object.keys(newErrors).length === 0) {
+    //   alert('Form submitted! ✅');
+    // }
     if (Object.keys(newErrors).length === 0) {
-      alert('Form submitted! ✅');
-    }
+  alert('Form submitted! ✅');
+  setFormData({
+    name: '',
+    phone: '',
+    email: '',
+    reason: '',
+    time: '',
+    agree: false,
+  });
+  setErrors({});
+}   
   };
+
 
   return (
     <section id="contact" className="w-full bg-white px-4 sm:px-6 md:px-12 py-12 sm:py-16">
